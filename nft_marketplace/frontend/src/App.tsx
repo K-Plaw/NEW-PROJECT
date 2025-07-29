@@ -1,10 +1,10 @@
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-import Home from "./pages/Home";
-import Marketplace from "./pages/Marketplace";
-import CreateListing from "./pages/CreateListing";
-import MyListings from "./pages/MyListings";
-import Navbar from "./components/Navbar";
-import Footer from "./components/Footer";
+import Home from "./pages/Home/Home";
+import Marketplace from "./pages/MarketPlace/Marketplace";
+import CreateListing from "./pages/CreateListing/CreateListing";
+import MyListings from "./pages/MyListings/MyListings";
+import Navbar from "./components/Navbar/Navbar";
+import Footer from "./components/Footer/Footer";
 import styles from "./App.module.css";
 
 export default function App() {
