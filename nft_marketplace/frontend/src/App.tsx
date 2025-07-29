@@ -5,13 +5,14 @@ import CreateListing from "./pages/CreateListing";
 import MyListings from "./pages/MyListings";
 import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
+import styles from "./App.module.css";
 
 export default function App() {
   return (
     <Router>
-      <div className="bg-[#f4faff] min-h-screen text-gray-900">
+      <div className={styles.appContainer}>
         <Navbar />
-        <main className="pt-20 px-4 md:px-12">
+        <main className={styles.main}>
           <Routes>
             <Route path="/" element={<Home />} />
             <Route path="/marketplace" element={<Marketplace />} />

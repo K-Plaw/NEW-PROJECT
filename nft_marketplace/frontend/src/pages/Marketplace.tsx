@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import "./Marketplace.module.css";
 
 interface NFT {
   id: number;
@@ -34,7 +35,7 @@ const mockNFTs: NFT[] = [
     id: 4,
     title: "Futuristic Ape",
     creator: "ZeeBee Arts",
-    image: "https://via.placeholder.com/300x300.png?text=Futuristic+Ape",
+    image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSTrIXEuQteCrpc-zQYqGG9Ty4q-_qUUd8d2Q&s",
     price: "4.0 SOL",
   },
 ];
@@ -50,20 +51,16 @@ const MarketPlace = () => {
   }, []);
 
   return (
-    <div className="pt-24 px-6 md:px-12">
-      <h1 className="text-3xl font-bold text-blue-900 mb-8">🛍️ Explore Marketplace</h1>
+    <div className="marketplace-container">
+      <h1 className="marketplace-heading">🛍️ Explore Marketplace</h1>
 
-      <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-8">
+      <div className="nft-grid">
         {nfts.map((nft) => (
-          <div key={nft.id} className="bg-white rounded-xl shadow-md hover:shadow-xl transition p-4">
-            <img
-              src={nft.image}
-              alt={nft.title}
-              className="w-full h-48 object-cover rounded-lg mb-4"
-            />
-            <h2 className="text-xl font-semibold text-blue-900">{nft.title}</h2>
-            <p className="text-sm text-blue-600 mb-2">by {nft.creator}</p>
-            <p className="text-lg font-bold text-blue-700">{nft.price}</p>
+          <div key={nft.id} className="nft-card">
+            <img src={nft.image} alt={nft.title} className="nft-image" />
+            <h2 className="nft-title">{nft.title}</h2>
+            <p className="nft-creator">by {nft.creator}</p>
+            <p className="nft-price">{nft.price}</p>
           </div>
         ))}
       </div>
